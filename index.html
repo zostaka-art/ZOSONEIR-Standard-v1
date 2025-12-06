@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ZOSONEIR – Multilayer Civilization Standard (v1.0)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="ZOSONEIR Multilayer Civilization Standard – a public reference framework for 21st-century peace-tech, ethical AI, and civilization-scale infrastructure.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #151b3a 0%, #050711 45%, #020308 100%);
+      color: #f5f7ff;
+      line-height: 1.6;
+    }
+    a { color: #7fb5ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+    }
+
+    header {
+      padding: 32px 0 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+      margin-bottom: 24px;
+    }
+    .tagline {
+      font-size: 0.9rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #9aa4d6;
+      margin-bottom: 8px;
+    }
+    h1 {
+      font-size: 1.9rem;
+      margin-bottom: 8px;
+    }
+    .sub {
+      color: #c5c9ee;
+      font-size: 0.98rem;
+      margin-bottom: 12px;
+    }
+    .jp-sub {
+      color: #9aa4d6;
+      font-size: 0.86rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .pill {
+      font-size: 0.78rem;
+      border-radius: 999px;
+      padding: 4px 10px;
+      border: 1px solid rgba(135,167,255,0.5);
+      color: #cbd4ff;
+      background: linear-gradient(135deg, rgba(35,55,120,0.9), rgba(18,24,64,0.9));
+    }
+
+    section {
+      margin-top: 32px;
+      padding-top: 8px;
+    }
+    section + section {
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding-top: 24px;
+    }
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    h2 span.icon {
+      font-size: 1.1rem;
+    }
+    p {
+      margin-bottom: 10px;
+      color: #d9defb;
+      font-size: 0.96rem;
+    }
+    ul {
+      margin: 6px 0 12px 1.1rem;
+      color: #d9defb;
+      font-size: 0.94rem;
+    }
+    li { margin-bottom: 4px; }
+
+    .layers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .layer-card {
+      border-radius: 10px;
+      padding: 10px 12px;
+      border: 1px solid rgba(138,162,255,0.35);
+      background: linear-gradient(145deg, rgba(28,34,90,0.95), rgba(10,14,42,0.95));
+    }
+    .layer-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 3px;
+    }
+    .layer-num {
+      font-size: 0.8rem;
+      color: #9aa4d6;
+    }
+    .layer-desc {
+      font-size: 0.86rem;
+      color: #dfe4ff;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .badge {
+      font-size: 0.74rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(132,196,255,0.6);
+      color: #cde9ff;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 14px 0;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(165,205,255,0.9);
+      background: linear-gradient(135deg, #3a6df3, #2a4bd4);
+      color: #fdfdff;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      box-shadow: 0 0 18px rgba(50,120,255,0.32);
+    }
+    .btn.secondary {
+      background: transparent;
+      box-shadow: none;
+      border-color: rgba(165,205,255,0.55);
+      color: #d5e2ff;
+    }
+    .btn span.icon {
+      font-size: 1rem;
+    }
+
+    .small-note {
+      font-size: 0.8rem;
+      color: #9ca4d8;
+      margin-top: 4px;
+    }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.8rem;
+      color: #8f98c6;
+    }
+
+    @media (min-width: 800px) {
+      .page { padding-top: 40px; }
+      h1 { font-size: 2.1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Hero / Header -->
+  <header>
+    <div class="tagline">ZOSONEIR • MULTILAYER CIVILIZATION DESIGN</div>
+    <h1>ZOSONEIR Multilayer Civilization Standard — Public Reference</h1>
+    <p class="sub">
+      A public reference framework for 21st-century peace-tech, ethical AI, and
+      civilization-scale infrastructure.
+    </p>
+    <p class="jp-sub">
+      ZOSONEIR は、マルチレイヤー構造で文明・AI・インフラを統合的に設計するための
+      「平和テック」国際リファレンス標準です。
+    </p>
+
+    <div class="pill-row">
+      <div class="pill">Version v1.0</div>
+      <div class="pill">Public Reference (Open Access)</div>
+      <div class="pill">Author: Takahisa Ikeda</div>
+    </div>
+  </header>
+
+  <!-- Overview -->
+  <section id="overview">
+    <h2><span class="icon">📖</span> Overview</h2>
+    <p>
+      <strong>ZOSONEIR</strong> is a multilayer civilization design framework built to support:
+    </p>
+    <ul>
+      <li>Ethical AI integrated with real-world infrastructure</li>
+      <li>High-performance computing (HPC) and cloud architectures</li>
+      <li>Resilient, transparent, and cooperative social systems</li>
+      <li>Long-term, peaceful technological evolution</li>
+    </ul>
+    <p>
+      This repository provides the <strong>complete public reference standard</strong>,
+      including 12 core chapters and 3 annex documents in PDF format.
+    </p>
+
+    <div class="button-row">
+      <a class="btn" href="https://github.com/zostaka-art/ZOSONEIR-Standard-v1" target="_blank" rel="noopener">
+        <span class="icon">📂</span>
+        Open full document set on GitHub
+      </a>
+      <a class="btn secondary" href="#documents">
+        <span class="icon">📚</span>
+        See document structure
+      </a>
+    </div>
+    <p class="small-note">
+      All PDFs are hosted directly in this GitHub repository for citation, review, and implementation.
+    </p>
+  </section>
+
+  <!-- Layers -->
+  <section id="layers">
+    <h2><span class="icon">🧩</span> Structure of the Civilization Layers</h2>
+    <p>
+      ZOSONEIR defines <strong>7 major civilization layers</strong>,
+      each containing 4 internal elements, from physical infrastructure
+      up to origin-level cosmology and future lines.
+    </p>
+
+    <div class="layers-grid">
+      <div class="layer-card">
+        <div class="layer-title">Layer 7 — Origin</div>
+        <div class="layer-num">Cosmology • First principles • Deep coherence</div>
+        <div class="layer-desc">
+          Conceptual origin layer that anchors the long-term direction of civilization and meaning.
+        </div>
+      </div>
+
+      <div class="layer-card">
+        <div class="layer-title">Layer 6 — Future Line</div>
+        <div class="layer-num">Scenarios • Futures • Choice of trajectories</div>
+        <div class="layer-desc">
+          Multiple possible future lines, emphasizing that the future is not fixed but selected through
+          observation, information, and cooperative action.
+        </div>
+      </div>
+
+      <div class="layer-card">
+        <div class="layer-title">Layer 5 — Resonance</div>
+        <div class="layer-num">Culture • Values • Shared narratives</div>
+        <div class="layer-desc">
+          Resonant patterns that align technology, institutions, and human experience across layers.
+        </div>
+      </div>
+
+      <div class="layer-card">
+        <div class="layer-title">Layer 4 — Social Systems</div>
+        <div class="layer-num">Institutions • Governance • Economy</div>
+        <div class="layer-desc">
+          Social, political, and economic structures that interact with AI and infrastructure.
+        </div>
+      </div>
+
+      <div class="layer-card">
+        <div class="layer-title">Layer 3 — Information Systems</div>
+        <div class="layer-num">AI • Data • Interfaces</div>
+        <div class="layer-desc">
+          AI systems, data architectures, and human–machine interfaces that mediate information at scale.
+        </div>
+      </div>
+
+      <div class="layer-card">
+        <div class="layer-title">Layer 2 — Technology Systems</div>
+        <div class="layer-num">HPC • Cloud • Networks</div>
+        <div class="layer-desc">
+          High-performance computing, cloud platforms, and digital infrastructure that power civilization-scale computation.
+        </div>
+      </div>
+
+      <div class="layer-card">
+        <div class="layer-title">Layer 1 — Physical Layer</div>
+        <div class="layer-num">Energy • UPS • Power Electronics</div>
+        <div class="layer-desc">
+          Power systems, UPS, and physical infrastructure that make all higher layers possible in the real world.
+        </div>
+      </div>
+    </div>
+
+    <div class="badge-row">
+      <div class="badge">7 civilization layers</div>
+      <div class="badge">4 internal elements per layer</div>
+      <div class="badge">Peace-tech oriented design</div>
+    </div>
+  </section>
+
+  <!-- Documents -->
+  <section id="documents">
+    <h2><span class="icon">📚</span> Complete Document Set (PDF)</h2>
+    <p>
+      The ZOSONEIR Standard v1.0 is organized into <strong>12 core chapters</strong>
+      and <strong>3 annex documents</strong>. All are available as PDFs in this repository.
+    </p>
+
+    <h3 style="margin:10px 0 4px;font-size:1rem;">Core Chapters 1–12</h3>
+    <ul>
+      <li>01 — Scope</li>
+      <li>02 — Normative References</li>
+      <li>03 — Terms &amp; Definitions</li>
+      <li>04 — Fundamental Ethical Principles</li>
+      <li>05 — Transparency Architecture</li>
+      <li>06 — Ethical Interoperability Model</li>
+      <li>07 — Civilizational Layer Structure</li>
+      <li>08 — (Reserved in v1.0)</li>
+      <li>09 — Resonance Spiral Model</li>
+      <li>10 — Harm Prevention Model</li>
+      <li>11 — Human–AI Co-Responsibility</li>
+      <li>12 — Global Risk &amp; Resilience Model</li>
+    </ul>
+
+    <h3 style="margin:10px 0 4px;font-size:1rem;">Annex Documents</h3>
+    <ul>
+      <li>Annex A — Core Terms</li>
+      <li>Annex B — Layer Overview</li>
+      <li>Annex C — Implementation Guide</li>
+    </ul>
+
+    <div class="button-row">
+      <a class="btn" href="https://github.com/zostaka-art/ZOSONEIR-Standard-v1" target="_blank" rel="noopener">
+        <span class="icon">⬇️</span>
+        Browse &amp; download PDFs on GitHub
+      </a>
+    </div>
+
+    <p class="small-note">
+      Direct links to individual chapters can be added later by wiring each PDF path
+      (for example after renaming them to simple filenames like <code>ch01_scope.pdf</code>).
+    </p>
+  </section>
+
+  <!-- Citation -->
+  <section id="citation">
+    <h2><span class="icon">🌐</span> Citation</h2>
+    <p>If you reference this work in research or external materials, a simple citation example:</p>
+    <p style="font-size:0.9rem;color:#c9d3ff;">
+      Takahisa Ikeda, <em>ZOSONEIR Multilayer Civilization Standard v1.0</em>,  
+      Public Reference (Open Access), GitHub Repository,  
+      <span style="word-break:break-all;">https://github.com/zostaka-art/ZOSONEIR-Standard-v1</span>.
+    </p>
+  </section>
+
+  <!-- Contact & Vision -->
+  <section id="contact">
+    <h2><span class="icon">✉️</span> Contact</h2>
+    <p>
+      For collaboration or research inquiries:
+    </p>
+    <ul>
+      <li>
+        LinkedIn:
+        <a href="https://www.linkedin.com/in/takahisa-ikeda" target="_blank" rel="noopener">
+          https://www.linkedin.com/in/takahisa-ikeda
+        </a>
+      </li>
+      <li>
+        Project page:
+        <span style="color:#9aa4d6;">(coming soon)</span>
+      </li>
+    </ul>
+  </section>
+
+  <section id="vision">
+    <h2><span class="icon">🌍</span> Vision</h2>
+    <p>
+      ZOSONEIR provides a foundation for integrating
+      <strong>AI × HPC × Ethics × Infrastructure</strong>
+      so that future civilizations can grow in a way that is safe, transparent, and peaceful.
+    </p>
+    <p>
+      Instead of treating AI as something separate from society, ZOSONEIR views it as one layer in a
+      broader, resonant structure — from physical energy systems all the way to shared futures.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © Takahisa Ikeda — ZOSONEIR Multilayer Civilization Standard v1.0  
+    <br>
+    Released as a public reference for academic, research, and non-commercial use.
+  </footer>
+
+</div>
+</body>
+</html>
